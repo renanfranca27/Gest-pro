@@ -20,7 +20,7 @@ const tiers = [
   {
     name: 'Stardart',
     id: 'tier-standard',
-    price: { Mês: 'R$69,90', Ano: 'R$144' },
+    price: { Mês: 'R$69,90', Ano: 'R$ 671,04' },
     description: 'Para começar agora.',
     features: [
       '1 Usuário',
@@ -34,7 +34,7 @@ const tiers = [
   {
     name: 'Professional',
     id: 'tier-professional',
-    price: { Mês: 'R$129,90', Ano: 'R$288' },
+    price: { Mês: 'R$129,90', Ano: 'R$ 1.247,04' },
     description: 'Para quem quer crescer.',
     features: [
       '3 Usuários',
@@ -48,7 +48,7 @@ const tiers = [
   {
     name: 'Premium +',
     id: 'tier-premium-plus',
-    price: { Mês: 'R$249,90', Ano: 'R$1000' },
+    price: { Mês: 'R$249,90', Ano: 'R$ 2.399,04' },
     description: 'Para gestão e consultoria.',
     features: [
       'Usuários Ilimitados',
@@ -74,7 +74,7 @@ export default function Main() {
   return (
     <main>
       {/* ================= HERO ================= */}
-      <section className="relative w-full overflow-hidden bg-[#F3F5FF] py-16 sm:py-20 lg:py-24">
+      <section id="beneficios" className="relative w-full overflow-hidden bg-[#F3F5FF] py-16 sm:py-20 lg:py-24">
         {/* Shape decorativo */}
         <div className="absolute hidden sm:block right-[-780px] top-1/2 -translate-y-1/2 w-[1340px] h-[1600px] bg-[#00218F] rounded-full -rotate-[50deg] scale-x-[0.88] skew-y-[-8deg]" />
 
@@ -122,7 +122,7 @@ export default function Main() {
       </section>
 
       {/* ================= PRICING ================= */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section id="precos" className="bg-white py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold text-[#0C0047]">

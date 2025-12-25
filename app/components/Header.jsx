@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import menu from "../config/menu";
 
 
 export default function Header() {
@@ -9,6 +10,14 @@ export default function Header() {
 
   const [modalOpen, setModalOpen] = useState(false);
 const [modalContent, setModalContent] = useState(null);
+
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false);
+  };
 
 
   return (
@@ -78,15 +87,19 @@ const [modalContent, setModalContent] = useState(null);
 
       {/* LOGO */}
       <div className="flex items-center">
-        <Image src="/logo.svg" alt="logo" width={130} height={100} />
+        <Image src="/nova-logo.svg" alt="logo" width={130} height={100} />
       </div>
 
       {/* MENU */}
       <ul className="hidden md:flex gap-10 text-white font-bevietnam text-[17px]">
-        {["Início", "Recursos", "Segmentos", "Benefícios", "Preços"].map(i => (
-          <li key={i}>
-            <a href="#" className="hover:opacity-75 transition">
-              {i}
+        {menu.map((item) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              onClick={(e) => { e.preventDefault(); handleScroll(item.id); }}
+              className="hover:opacity-75 transition"
+            >
+              {item.label}
             </a>
           </li>
         ))}
@@ -112,11 +125,18 @@ const [modalContent, setModalContent] = useState(null);
     </div>
   </div>
 
-  {open && (
+    {open && (
     <div className="md:hidden mx-4 bg-blue-900/95 rounded-xl p-3 z-30">
       <ul className="flex flex-col gap-3 text-white font-bevietnam text-sm">
-        {["Início", "Recursos", "Segmentos", "Benefícios", "Preços"].map(i => (
-          <li key={i}>{i}</li>
+        {menu.map((item) => (
+          <li key={item.id}>
+            <button
+              onClick={() => handleScroll(item.id)}
+              className="text-left w-full"
+            >
+              {item.label}
+            </button>
+          </li>
         ))}
       </ul>
 
@@ -133,7 +153,7 @@ const [modalContent, setModalContent] = useState(null);
 </nav>
 
 {/* HERO */}
-<div className="relative z-10 text-center pt-10 px-4 max-w-4xl mx-auto">
+<div id="inicio" className="relative z-10 text-center pt-10 px-4 max-w-4xl mx-auto">
   <h1 className="text-white font-bold text-3xl md:text-6xl lg:text-7xl leading-tight font-bevietnam">
     Gerencie Seu <span className="text-[#37E2D5]">Negócio</span>
     <br />Com Inteligência
@@ -156,7 +176,7 @@ const [modalContent, setModalContent] = useState(null);
 </div>
 
 {/* DASHBOARD */}
-<div className="relative z-20 mt-16">
+<div id="segmentos" className="relative z-20 mt-16">
   <Image
     src="/desh.png"
     alt="Dashboard"
@@ -166,7 +186,7 @@ const [modalContent, setModalContent] = useState(null);
   />
 </div>
 
-      <main className="bg-white relative z-20 mt-24 py-20 px-4">
+      <main id="recursos" className="bg-white relative z-20 mt-24 py-20 px-4">
   {/* TÍTULO */}
   <div className="max-w-4xl mx-auto text-center mb-14">
     <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold font-bevietnam text-black">
@@ -340,7 +360,7 @@ const [modalContent, setModalContent] = useState(null);
       <div className="px-10 pb-10 flex  justify-end items-center gap-10">
         <button
           onClick={() => setModalOpen(false)}
-          className="text-[#667085] text-sm font-bevietnam hover:text-black"
+          className="text-[#667085] text-sm font-bevietnam hover:text-black cursor-pointer"
         >
           Fechar
         </button>
@@ -354,7 +374,8 @@ const [modalContent, setModalContent] = useState(null);
             py-4
             rounded-xl
             text-sm
-            font-bevietnam
+            font-bevietnam 
+            cursor-pointer
           "
         >
           Experimente Agora

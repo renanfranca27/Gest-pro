@@ -1,8 +1,15 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
+import menu from "../config/menu";
 
 export default function Footer() {
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <footer>
       {/* ================== SEÇÃO SEGMENTOS ================== */}
@@ -193,7 +200,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-white">
             <div>
-              <Image src="/logo.svg" alt="logo" width={130} height={100} />
+              <Image src="/nova-logo.svg" alt="logo" width={130} height={100} />
               <p className="mt-6 text-sm text-white/80">
                 A plataforma definitiva para gestão de comércios, restaurantes e serviços.
               </p>
@@ -202,10 +209,16 @@ export default function Footer() {
             <div>
               <h2 className="font-semibold mb-4">Navegação</h2>
               <ul className="space-y-3 text-sm text-white/80">
-                <li className="hover:text-white cursor-pointer">Recursos</li>
-                <li className="hover:text-white cursor-pointer">Segmentos</li>
-                <li className="hover:text-white cursor-pointer">Benefícios</li>
-                <li className="hover:text-white cursor-pointer">Preços</li>
+                {menu.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => handleScroll(item.id)}
+                      className="hover:text-white cursor-pointer text-left"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -228,6 +241,24 @@ export default function Footer() {
               <p className="text-sm text-white/80 mb-4">
                 Acompanhe nossas novidades e dicas nas redes sociais.
               </p>
+
+              <div className="flex items-center gap-4 text-white">
+
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:opacity-80">
+                  <FaInstagram size={20} />
+                </a>
+
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:opacity-80">
+                  <FaFacebookF size={20} />
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:opacity-80">
+                  <FaLinkedinIn size={20} />
+                </a>
+
+                <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:opacity-80">
+                  <FaYoutube size={20} />
+                </a>
+              </div>
             </div>
           </div>
 
