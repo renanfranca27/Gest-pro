@@ -8,7 +8,14 @@ import menu from '../config/menu';
 export default function Footer() {
   const handleScroll = (id) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      const top = rect.top + window.pageYOffset;
+      const offset = 80; // ajuste se tiver header fixo
+      window.scrollTo({ top: top - offset, behavior: 'smooth' });
+    } else {
+      console.warn('Elemento não encontrado:', id);
+    }
   };
   return (
     <footer>
@@ -17,7 +24,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-[#0089ED] font-bold text-xl sm:text-2xl">Feito para o seu negócio</h2>
 
-          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold mt-3 mb-6">
+          <h1 id="segmentos" className="text-white text-3xl sm:text-4xl md:text-6xl font-bold mt-3 mb-6">
             Soluções por Segmento
           </h1>
 

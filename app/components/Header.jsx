@@ -14,13 +14,18 @@ export default function Header() {
   const handleScroll = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const rect = el.getBoundingClientRect();
+      const top = rect.top + window.pageYOffset;
+      const offset = 80; // ajuste para header fixo, altere se necessário
+      window.scrollTo({ top: top - offset, behavior: 'smooth' });
+    } else {
+      console.warn('Elemento não encontrado:', id);
     }
     setOpen(false);
   };
 
   return (
-    <header className="relative w-full min-h-screen overflow-hidden flex flex-col items-center">
+    <header className="relative w-full min-h-screen flex flex-col items-center">
       {/* ELIPSE AZUL */}
       <div
         className="
@@ -173,7 +178,7 @@ export default function Header() {
       </div>
 
       {/* DASHBOARD */}
-      <div id="segmentos" className="relative z-20 mt-16">
+      <div className="relative z-20 mt-16">
         <Image
           src="/desh.png"
           alt="Dashboard"
