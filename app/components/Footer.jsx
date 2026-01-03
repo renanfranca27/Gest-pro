@@ -1,9 +1,9 @@
-"use client"
-import React from "react";
-import Image from "next/image";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa'
-import menu from "../config/menu";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { CheckCircleIcon } from '@heroicons/react/24/outline';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import menu from '../config/menu';
 
 export default function Footer() {
   const handleScroll = (id) => {
@@ -15,23 +15,20 @@ export default function Footer() {
       {/* ================== SEÇÃO SEGMENTOS ================== */}
       <div className="bg-[#111827] py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-[#0089ED] font-bold text-xl sm:text-2xl">
-            Feito para o seu negócio
-          </h2>
+          <h2 className="text-[#0089ED] font-bold text-xl sm:text-2xl">Feito para o seu negócio</h2>
 
           <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold mt-3 mb-6">
             Soluções por Segmento
           </h1>
 
           <p className="text-white/90 text-base sm:text-lg max-w-3xl mx-auto">
-            O GestPro se adapta às necessidades específicas da sua empresa.
-            Escolha o módulo ideal no momento do cadastro.
+            O GestPro se adapta às necessidades específicas da sua empresa. Escolha o módulo ideal
+            no momento do cadastro.
           </p>
         </div>
 
         {/* ================== CARDS ================== */}
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          
           {/* CARD 1 */}
           <div className="group relative rounded-2xl bg-[#0E1B2A] border border-white/10 overflow-hidden shadow-lg flex flex-col">
             <div className="relative h-[180px] overflow-hidden">
@@ -127,9 +124,7 @@ export default function Footer() {
             </div>
 
             <div className="p-5 text-white flex flex-col flex-1">
-              <p className="text-sm text-white/70 mb-4">
-                Gestão completa da cozinha ao delivery.
-              </p>
+              <p className="text-sm text-white/70 mb-4">Gestão completa da cozinha ao delivery.</p>
 
               <ul className="space-y-3 text-sm mb-6">
                 <li className="flex items-center gap-2">
@@ -167,9 +162,7 @@ export default function Footer() {
             </div>
 
             <div className="p-5 text-white flex flex-col flex-1">
-              <p className="text-sm text-white/70 mb-4">
-                Organize sua agenda e fidelize clientes.
-              </p>
+              <p className="text-sm text-white/70 mb-4">Organize sua agenda e fidelize clientes.</p>
 
               <ul className="space-y-3 text-sm mb-6">
                 <li className="flex items-center gap-2">
@@ -191,7 +184,6 @@ export default function Footer() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -243,19 +235,42 @@ export default function Footer() {
               </p>
 
               <div className="flex items-center gap-4 text-white">
-
-                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:opacity-80">
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="hover:opacity-80"
+                >
                   <FaInstagram size={20} />
                 </a>
 
-                <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:opacity-80">
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="hover:opacity-80"
+                >
                   <FaFacebookF size={20} />
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:opacity-80">
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:opacity-80"
+                >
                   <FaLinkedinIn size={20} />
                 </a>
 
-                <a href="https://www.youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="hover:opacity-80">
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube"
+                  className="hover:opacity-80"
+                >
                   <FaYoutube size={20} />
                 </a>
               </div>

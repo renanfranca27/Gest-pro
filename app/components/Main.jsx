@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react'
-import Image from 'next/image'
-import { RadioGroup } from '@headlessui/react'
-import { CheckCircleIcon, CheckIcon } from '@heroicons/react/20/solid'
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { RadioGroup } from '@headlessui/react';
+import { CheckCircleIcon, CheckIcon } from '@heroicons/react/20/solid';
 
 /* ================= UTIL ================= */
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 /* ================= DATA ================= */
 const frequencies = [
   { value: 'Mês', label: 'Mês', priceSuffix: '/Mês' },
   { value: 'Ano', label: 'Ano', priceSuffix: '/Ano' },
-]
+];
 
 const tiers = [
   {
@@ -59,22 +59,25 @@ const tiers = [
       'Módulos Personalizados',
     ],
   },
-]
+];
 
 /* ================= COMPONENT ================= */
 export default function Main() {
-  const [frequency, setFrequency] = useState(frequencies[0])
-  const [selectedPlan, setSelectedPlan] = useState(tiers[1])
+  const [frequency, setFrequency] = useState(frequencies[0]);
+  const [selectedPlan, setSelectedPlan] = useState(tiers[1]);
 
   const handleSelectPlan = (tier) => {
-    console.log('Plano escolhido:', tier.name)
-    console.log('Frequência:', frequency.value)
-  }
+    console.log('Plano escolhido:', tier.name);
+    console.log('Frequência:', frequency.value);
+  };
 
   return (
     <main>
       {/* ================= HERO ================= */}
-      <section id="beneficios" className="relative w-full overflow-hidden bg-[#F3F5FF] py-16 sm:py-20 lg:py-24">
+      <section
+        id="beneficios"
+        className="relative w-full overflow-hidden bg-[#F3F5FF] py-16 sm:py-20 lg:py-24"
+      >
         {/* Shape decorativo */}
         <div className="absolute hidden sm:block right-[-780px] top-1/2 -translate-y-1/2 w-[1340px] h-[1600px] bg-[#00218F] rounded-full -rotate-[50deg] scale-x-[0.88] skew-y-[-8deg]" />
 
@@ -147,7 +150,7 @@ export default function Main() {
                   className={({ checked }) =>
                     classNames(
                       checked ? 'bg-[#00218F] text-white' : 'text-gray-500',
-                      'cursor-pointer rounded-full px-4 py-2 text-sm font-semibold'
+                      'cursor-pointer rounded-full px-4 py-2 text-sm font-semibold',
                     )
                   }
                 >
@@ -160,7 +163,7 @@ export default function Main() {
           {/* Cards */}
           <div className="mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {tiers.map((tier) => {
-              const isSelected = selectedPlan.id === tier.id
+              const isSelected = selectedPlan.id === tier.id;
 
               return (
                 <div
@@ -181,29 +184,31 @@ export default function Main() {
                       min-h-[680px]
                       flex
                       flex-col
-                    `
+                    `,
                   )}
                 >
                   {/* Título */}
-                  <h3 className="text-2xl font-semibold text-center">
-                    {tier.name}
-                  </h3>
+                  <h3 className="text-2xl font-semibold text-center">{tier.name}</h3>
 
                   {/* Descrição */}
-                  <p className={classNames(
-                    'mt-6 text-center',
-                    isSelected ? 'text-white/90' : 'text-gray-600'
-                  )}>
+                  <p
+                    className={classNames(
+                      'mt-6 text-center',
+                      isSelected ? 'text-white/90' : 'text-gray-600',
+                    )}
+                  >
                     {tier.description}
                   </p>
 
                   {/* Preço */}
                   <p className="mt-8 text-3xl sm:text-4xl font-bold text-center">
                     {tier.price[frequency.value]}
-                    <span className={classNames(
-                      'ml-1 text-sm',
-                      isSelected ? 'text-white/70' : 'text-gray-500'
-                    )}>
+                    <span
+                      className={classNames(
+                        'ml-1 text-sm',
+                        isSelected ? 'text-white/70' : 'text-gray-500',
+                      )}
+                    >
                       {frequency.priceSuffix}
                     </span>
                   </p>
@@ -211,14 +216,12 @@ export default function Main() {
                   {/* Botão */}
                   <button
                     onClick={(e) => {
-                      e.stopPropagation()
-                      handleSelectPlan(tier)
+                      e.stopPropagation();
+                      handleSelectPlan(tier);
                     }}
                     className={classNames(
-                      isSelected
-                        ? 'bg-white text-[#0B0B3B]'
-                        : 'bg-[#00218F] text-white',
-                      'mt-8 w-full rounded-xl py-3 text-sm font-semibold transition hover:scale-[1.02]'
+                      isSelected ? 'bg-white text-[#0B0B3B]' : 'bg-[#00218F] text-white',
+                      'mt-8 w-full rounded-xl py-3 text-sm font-semibold transition hover:scale-[1.02]',
                     )}
                   >
                     {isSelected ? 'Continuar com este plano' : 'Selecionar Plano'}
@@ -231,7 +234,7 @@ export default function Main() {
                         <CheckIcon
                           className={classNames(
                             'h-5 w-5',
-                            isSelected ? 'text-white' : 'text-indigo-600'
+                            isSelected ? 'text-white' : 'text-indigo-600',
                           )}
                         />
                         {feature}
@@ -239,11 +242,11 @@ export default function Main() {
                     ))}
                   </ul>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </section>
     </main>
-  )
+  );
 }
