@@ -18,7 +18,7 @@ export default function Footer() {
     }
   };
   return (
-    <footer>
+    <footer className="overflow-hidden ">
       {/* ================== SEÇÃO SEGMENTOS ================== */}
       <div className="bg-[#111827] py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
@@ -198,12 +198,19 @@ export default function Footer() {
       <div className="bg-[#00218F]">
         <div className="max-w-7xl mx-auto px-6 py-14">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-white">
-            <div>
-              <Image src="/nova-logo.svg" alt="logo" width={170} height={100} />
-              <p className="mt-6 text-sm text-white/80">
-                A plataforma definitiva para gestão de comércios, restaurantes e serviços.
-              </p>
-            </div>
+
+<div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+  <Image
+    src="/nova-logo.svg"
+    alt="logo"
+    width={170}
+    height={150}
+  />
+
+  <p className="mt-6 max-w-xs text-[15px] text-white leading-relaxed">
+    A plataforma definitiva para gestão de comércios, restaurantes e serviços.
+  </p>
+</div>
 
             <div>
               <h2 className="font-semibold mb-4">Navegação</h2>

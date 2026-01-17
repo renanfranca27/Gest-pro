@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { RadioGroup } from '@headlessui/react';
 import { CheckCircleIcon, CheckIcon } from '@heroicons/react/20/solid';
 
@@ -72,7 +73,7 @@ export default function Main() {
   };
 
   return (
-    <main>
+    <main className="overflow-hidden">
       {/* ================= HERO ================= */}
       <section
         id="beneficios"

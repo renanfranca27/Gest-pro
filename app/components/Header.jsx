@@ -25,7 +25,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative w-full min-h-screen flex flex-col items-center">
+    <header className="relative w-full min-h-screen flex flex-col items-center overflow-hidden">
       {/* ELIPSE AZUL */}
       <div
         className="
