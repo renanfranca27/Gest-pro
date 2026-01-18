@@ -4,7 +4,7 @@ export default function LoginPage() {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
     return(
- <body className="relative min-h-screen">
+ <body >
 
   {/* FUNDO */}
   <div className="fixed inset-0 flex flex-col -z-10">
@@ -13,14 +13,17 @@ const [password, setPassword] = useState("");
   </div>
 
   {/* CONTEÚDO */}
-  <main className="relative z-10">
+  <main className="relative z-10 ">
     {/* todo o conteúdo do site aqui */}
 
-    <section>
-        <a href=""> Voltar </a>
-        <h1 className=" text-2xl font-bold">Seja Bem Vindo!</h1>
-        <p>A plataforma completa para gestão <br /> inteligente do seu negócio. </p>
-    </section>
+ <div className=" mt-14 flex flex-col gap-10 px-14 ">
+
+      <a className=" font-light" href="#">VOLTAR</a>
+      <section className=" mt-4 ">
+        <h1 className="font-bold text-lg text-[40px] " >Seja Bem Vindo!</h1>
+        <p className="font-light">A plataforma completa para gestão <br /> inteligente do seu negócio.</p>
+      </section>
+ </div>
   </main>
 
 </body>
