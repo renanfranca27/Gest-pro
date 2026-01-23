@@ -16,7 +16,7 @@ const router = useRouter();
       </div>
 
       {/* CONTEÚDO */}
-      <main className="relative z-10 min-h-screen px-14 pt-7">
+      <main className="relative z-10 min-h-screen overflow-hidden">
 
         {/* TOPO */}
         <section 
@@ -50,7 +50,7 @@ const router = useRouter();
         </section>
 
         {/* CONTEÚDO CENTRAL */}
-        <section className=" absolute flex justify-center gap-40 items-center">
+        <section className=" flex justify-center gap-36 items-center">
 
           {/* IMAGEM */}
           <Image
