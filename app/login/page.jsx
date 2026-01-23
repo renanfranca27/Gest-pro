@@ -41,8 +41,8 @@ const router = useRouter();
         </section>
 
         {/* TEXTO */}
-        <section className="mt-6 mb-12">
-          <h1 className="font-bold text-[50px]">Seja Bem Vindo!</h1>
+        <section className="mt-6 mb-10">
+          <h1 className="font-bold text-[40px]">Seja Bem Vindo!</h1>
           <p className="font-light text-xl">
             A plataforma completa para gestão <br />
             inteligente do seu negócio.
