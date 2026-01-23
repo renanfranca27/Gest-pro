@@ -6,6 +6,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import menu from '../config/menu';
 
+
 export default function Footer() {
   const handleScroll = (id) => {
     const el = document.getElementById(id);

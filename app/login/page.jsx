@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-
+import { useRouter } from 'next/navigation';
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const router = useRouter();
   return (
     <>
       {/* FUNDO */}
@@ -19,7 +19,10 @@ export default function LoginPage() {
       <main className="relative z-10 min-h-screen px-14 pt-7">
 
         {/* TOPO */}
-        <section className="flex items-center gap-2 hover:underline cursor-pointer w-fit">
+        <section 
+         onClick={()=> router.push("/")}
+        className="flex items-center gap-2 hover:underline cursor-pointer w-fit">
+          
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,7 +37,7 @@ export default function LoginPage() {
               d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
             />
           </svg>
-          <a className="font-light mt-1">VOLTAR</a>
+          <a  className="font-light mt-1">VOLTAR</a>
         </section>
 
         {/* TEXTO */}
@@ -59,7 +62,7 @@ export default function LoginPage() {
           />
 
           {/* FORMULÁRIO */}
-          <div className="flex flex-col bg-white p-10 rounded-3xl shadow-2xl text-black w-[26vw] h-[70vh] ">
+          <div className="flex flex-col bg-white p-10 rounded-3xl shadow-2xl text-black w-[27vw] h-[73vh] ">
 
             {/* LOGO */}
             <div className=" flex flex-col justify-center items-center ">
@@ -68,7 +71,7 @@ export default function LoginPage() {
               <Image
                 src="/nova-logo.svg"
                 alt="logo-login"
-                width={400}
+                width={350}
                 height={70}
               />
             

@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import menu from '../config/menu';
 import FeatureCard from './FeatureCard';
 import Modal from './Modal';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
+const router = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
@@ -112,10 +113,12 @@ export default function Header() {
 
             {/* AÇÕES */}
             <div className="hidden md:flex gap-4">
-              <button className="h-[46px] px-[45px] rounded-lg border border-white/60 text-white hover:bg-white/10 transition">
+              <button 
+              onClick={()=>router.push("/login")}
+              className=" cursor-pointer h-[46px] px-[45px] rounded-lg border border-white/60 text-white hover:bg-white/10 transition">
                 Entrar
               </button>
-              <button className="h-[50px] px-[52px] rounded-lg bg-white text-purple-600 hover:bg-gray-100 transition">
+              <button className=" cursor-pointer  h-[50px] px-[52px] rounded-lg bg-white text-purple-600 hover:bg-gray-100 transition">
                 Criar Conta
               </button>
             </div>
