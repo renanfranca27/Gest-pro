@@ -1,130 +1,194 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
+
 export default function LoginPage() {
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
+  return (
+    <>
+      {/* FUNDO */}
+      <div className="fixed inset-0 -z-10">
+        <div className="h-1/2 bg-[#1E40AF]" />
+        <div className="h-1/2 bg-white" />
+      </div>
 
+      {/* CONTEÚDO */}
+      <main className="relative z-10 min-h-screen px-14 pt-7">
 
-const notificationMethods = [
-  { id: 'ativo-conta', title: 'Manter conectado' },
-]
+        {/* TOPO */}
+        <section className="flex items-center gap-2 hover:underline cursor-pointer w-fit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+            />
+          </svg>
+          <a className="font-light mt-1">VOLTAR</a>
+        </section>
 
-    return(
- <body >
+        {/* TEXTO */}
+        <section className="mt-6 mb-12">
+          <h1 className="font-bold text-[50px]">Seja Bem Vindo!</h1>
+          <p className="font-light text-xl">
+            A plataforma completa para gestão <br />
+            inteligente do seu negócio.
+          </p>
+        </section>
 
-  {/* FUNDO */}
-  <div className="fixed inset-0 flex flex-col -z-10">
-    <div className="h-1/2 bg-blue-600"></div>
-    <div className="h-1/2 bg-white"></div>
-  </div>
+        {/* CONTEÚDO CENTRAL */}
+        <section className=" absolute flex justify-center gap-40 items-center">
 
-  {/* CONTEÚDO */}
-  <main className="relative z-10 ">
-    {/* todo o conteúdo do site aqui */}
+          {/* IMAGEM */}
+          <Image
+            src="/casa-login.svg"
+            alt="casa-login"
+            width={850}
+            height={550}
+            priority
+          />
 
- <div className=" mt-14 flex flex-col gap-10 px-14 ">
+          {/* FORMULÁRIO */}
+          <div className="flex flex-col bg-white p-10 rounded-3xl shadow-2xl text-black w-[26vw] h-[70vh] ">
 
-      <a className=" font-light" href="#">VOLTAR</a>
-      <section className=" mt-4 ">
-        <h1 className="font-bold text-lg text-[40px] " >Seja Bem Vindo!</h1>
-        <p className="font-light">A plataforma completa para gestão <br /> inteligente do seu negócio.</p>
-      </section>
-      <div className=" flex gap-30 justify-center ">
-       <Image
-    src="/casa-login.svg"
-    alt="casa-login"
-    width={750}
-    height={450}
-    
-  />
-          { /* FORMULÁRIO DE LOGIN */   }
-        <div className="   flex flex-col bg-white p-10 rounded-3xl max-w-md text-black  shadow-xl/30 w-[30vw] "  > 
+            {/* LOGO */}
+            <div className=" flex flex-col justify-center items-center ">
 
+            
               <Image
-      src="/nova-logo.svg"
-      alt="logo-login"
-      width={300}
-      height={60}
-    />
-        <senction className=" text-center my-1 ">
-          <h1 className=" text-4xl font-bold leading-9 tracking-tight text-gray-900"> Entrar</h1>
-            <p className="font-light">Acesse o painel de gestão do Gest Pro</p>
-        </senction>
-        { /* FORMULÁRIO */ }
-            <form action="" method="post">
-        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-        E-mail
-      </label>
-      <div className="mt-2">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          placeholder="you@example.com"
-        />
-      </div>
-
-        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-        Senha
-      </label>
-      <div className="mt-4">
-        <input
-          type="password"
-          name="password"
-          id="password"
-          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          placeholder="********"
-        />
-      </div>
-
-      {/* RADIO BUTTONS */}
-     <div className=" flex  justify-between items-center ">
-      <fieldset className="mt-4">
-        <legend className="sr-only">Notification method</legend>
-        <div className="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
-          {notificationMethods.map((notificationMethod) => (
-            <div key={notificationMethod.id} className="flex items-center">
-              <input
-                id={notificationMethod.id}
-                name="notification-method"
-                type="radio"
-                defaultChecked={notificationMethod.id === 'ativo-conta'}
-                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                src="/nova-logo.svg"
+                alt="logo-login"
+                width={400}
+                height={70}
               />
-              <label htmlFor={notificationMethod.id} className="ml-3 block text-sm font-medium leading-6 text-gray-900">
-                {notificationMethod.title}
-              </label>
+            
+
+            {/* TÍTULO */}
+         <section className="text-center mb-5 space-y-2">
+  <h2 className="text-4xl font-bold text-gray-900">Entrar</h2>
+  <p className="font-light text-gray-500">
+    Acesse o painel de gestão do Gest Pro
+  </p>
+</section>
+
+
             </div>
-          ))}
-        </div>
-      </fieldset>
-              <section className="mt-4">
-                <a href="esqueceu?" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+
+            {/* FORM */}
+            <form className="space-y-4">
+
+              {/* EMAIL */}
+              <div>
+                <label className="block text-sm font-medium text-gray-900">
+                  E-mail
+                </label>
+                <div className="relative mt-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Digite seu e-mail"
+                    className=" bg-[#F1F3F6] w-full rounded-md py-3 pl-4 pr-12 ring-1focus:ring-2 focus:ring-indigo-500 transition font-light"
+                  />
+                 <span className="absolute right-0 top-1/2 -translate-y-1/2 bg-indigo-600 p-3 rounded-md text-white">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="size-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+    />
+  </svg>
+</span>
+
+                </div>
+              </div>
+
+              {/* SENHA */}
+              <div>
+                <label className="block text-sm font-medium text-gray-900">
+                  Senha
+                </label>
+                <div className="relative mt-2">
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Digite sua senha"
+                    className=" bg-[#F1F3F6] w-full rounded-md py-3 pl-4 pr-12 ring-1focus:ring-2 focus:ring-indigo-500 transition font-light"
+                  />
+                 <span className="absolute right-0 top-1/2 -translate-y-1/2 bg-indigo-600 p-3 rounded-md text-white">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="size-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+    />
+  </svg>
+</span>
+
+                </div>
+              </div>
+
+              {/* OPÇÕES */}
+              <div className="flex items-center justify-between">
+                <label className="flex items-center gap-2 text-sm text-gray-600 font-light">
+                  <input
+                    type="checkbox"
+                    className="rounded border-gray-300 text-indigo-600 cursor-pointer font-light"
+                  />
+                  Manter conectado
+                </label>
+
+                <a className="text-sm font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer">
                   Esqueceu?
                 </a>
-              </section>
-    </div>
+              </div>
 
-      <div className="mt-6">
-        <button
-          type="submit"
-          className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500  focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer h-12 text-center items-center"
-        >
-          Entrar no Sistema
-        </button>
-      </div>
-          </form>
+              {/* BOTÃO */}
+              <button
+                type="submit"
+                className="w-full h-12 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-500 transition cursor-pointer"
+              >
+                Entrar no Sistema
+              </button>
+            </form>
 
-        </div>
-      </div>
- </div>
-  </main>
-
-</body>
+            {/* CADASTRO */}
 
 
-    )
+            <p className="mt-6 text-center text-sm text-gray-500 font-light">
+              Não tem uma conta?{" "}
+              <a className="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer">
+                Faça seu cadastro
+              </a>
+            </p>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 }
