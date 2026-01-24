@@ -2,11 +2,13 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-const router = useRouter();
+  const router = useRouter();
+
   return (
     <>
       {/* FUNDO */}
@@ -16,20 +18,20 @@ const router = useRouter();
       </div>
 
       {/* CONTEÚDO */}
-      <main className="relative z-10 h-screen overflow-hidden overflow-x-hidden px-4 sm:px-6 lg:px-8 flex flex-col w-screen ">
+      <main className="relative z-10 min-h-screen w-full overflow-x-hidden px-4 sm:px-6 lg:px-8 flex flex-col">
 
-        {/* TOPO */}
-        <section 
-         onClick={()=> router.push("/")}
-        className="flex items-center gap-2 hover:underline cursor-pointer w-fit py-2 sm:py-3 p-3 mt-3.5">
-          
+        {/* TOPO (não interfere no mobile) */}
+        <section
+          onClick={() => router.push("/")}
+          className="hidden sm:flex items-center gap-2 hover:underline cursor-pointer w-fit py-3 mt-3"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5 sm:size-6"
+            className="size-6"
           >
             <path
               strokeLinecap="round"
@@ -37,37 +39,39 @@ const router = useRouter();
               d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
             />
           </svg>
-          <a className="font-light text-sm sm:text-base">VOLTAR</a>
+          <span className="font-light text-base">VOLTAR</span>
         </section>
 
-        {/* TEXTO */}
-        <section className=" w-lg py-1 sm:py-1  p-4 pt-4">
-          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight">Seja Bem Vindo!</h1>
-          <p className="font-light text-sm sm:text-base md:text-lg mt-0.5 sm:mt-1">
-            A plataforma completa para gestão <br className="hidden sm:block" />
+        {/* TEXTO (desktop apenas) */}
+        <section className="hidden sm:flex flex-col p-4 pt-2 h-15  w-100  ">
+          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight">
+            Seja Bem Vindo!
+          </h1>
+          <p className="font-light text-sm md:text-lg mt-1">
+            A plataforma completa para gestão <br />
             inteligente do seu negócio.
           </p>
         </section>
 
-        {/* CONTEÚDO CENTRAL */}
-        <section className="flex flex-col lg:flex-row items-start
-                   w-full gap-6 lg:gap-12
-                   pt-0 sm:pt-1 lg:pt-2 xl:pt-4">
+        {/* CENTRALIZAÇÃO REAL */}
+        <section className="flex-1 flex items-center justify-center">
 
-          {/* IMAGEM */}
-          <div className="hidden lg:flex lg:w-1/2 justify-center">
-            <Image
-              src="/casa-login.svg"
-              alt="casa-login"
-              width={850}
-              height={550}
-              priority
-              className="w-full max-w-lg xl:max-w-2xl h-auto object-contain"
-            />
-          </div>
+          <div className="w-full max-w-7xl flex items-center justify-center gap-12">
 
-          {/* FORMULÁRIO */}
-      <div
+            {/* IMAGEM (desktop) */}
+            <div className="hidden lg:flex w-1/2 justify-center">
+              <Image
+                src="/casa-login.svg"
+                alt="casa-login"
+                width={850}
+                height={550}
+                priority
+                className="w-full max-w-lg xl:max-w-2xl h-auto object-contain"
+              />
+            </div>
+
+            {/* FORMULÁRIO */}
+              <div
   className="
     w-full
     sm:max-w-md
@@ -82,26 +86,31 @@ const router = useRouter();
     flex
     items-center
     justify-center
-    -mt-30
+    sm:-mt-28
   "
 >
   {/* WRAPPER INTERNO */}
-  <div className="w-full flex flex-col items-center justify-center gap-3">
+  <div className="w-full flex flex-col items-center justify-center gap-4">
 
     {/* LOGO */}
 {/* LOGO */}
-<div className=" justify-center hidden sm:flex ">
+
+
+{/* TÍTULO  e LOGO*/}
+
+<section className="flex flex-col items-center mb-4 -mt-15 gap-2">
+
+
   <Image
     src="/nova-logo.svg"
     alt="logo-login"
-    width={280}
+    width={380}
     height={60}
+    className=""
   />
-</div>
 
-{/* TÍTULO */}
-<section className="text-center space-y-0 leading-tight">
-  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+
+  <h2 className=" text-3xl sm:text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">
     Entrar
   </h2>
   <p className="font-light text-xs sm:text-sm text-gray-500">
@@ -110,10 +119,10 @@ const router = useRouter();
 </section>
 
     {/* FORM */}
-    <form className="w-full flex flex-col gap-4 mt-2 sm:mt-3 mb-2">
+    <form className="w-full flex flex-col gap-4 sm:mt-3 mb-2 p-3">
 
       {/* EMAIL */}
-      <div>
+      <div> 
         <label className="block text-xs font-medium text-gray-900 mb-1.5">
           E-mail
         </label>
@@ -136,6 +145,7 @@ const router = useRouter();
               focus:ring-indigo-500
               transition
               font-light
+             
             "
           />
           <span className="absolute right-1 top-1/2 -translate-y-1/2 bg-indigo-600 p-2 sm:p-2.5 rounded text-white">
@@ -235,8 +245,6 @@ const router = useRouter();
       >
         Entrar no Sistema
       </button>
-    </form>
-
     {/* CADASTRO */}
     <p className="text-center text-xs text-gray-500 font-light">
       Não tem uma conta?{" "}
@@ -244,10 +252,12 @@ const router = useRouter();
         Faça seu cadastro
       </a>
     </p>
+    </form>
+
 
   </div>
-</div>
-
+  </div>
+          </div>
         </section>
       </main>
     </>
