@@ -77,7 +77,6 @@ export default function LoginPage() {
     sm:max-w-md
     lg:max-w-lg
     lg:w-1/2
-    min-h-[641px]
     bg-white
     p-6 sm:p-8
     rounded-3xl
@@ -222,7 +221,9 @@ export default function LoginPage() {
           Manter conectado
         </label>
 
-        <a className="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer">
+        <a 
+            onClick={()=>router.push("/login/forgot-password")}
+        className="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer">
           Esqueceu?
         </a>
       </div>
