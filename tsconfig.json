@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/login/page.jsx", "app/components/Footer.jsx", "app/components/Main.jsx", "app/components/Header.jsx"  ],
+, "app/login/page.tsx", "app/components/Footer.jsx", "app/components/Main.jsx", "app/components/Header.jsx", "app/login/forgot-password/config.js", "app/register/page.jsx"  ],
   "exclude": ["node_modules"]
 }

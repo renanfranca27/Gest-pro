@@ -68,6 +68,7 @@ return(
         </label>
         <div className="relative">
           <input
+        id="email2"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -108,6 +109,7 @@ return(
       </div>
           {/* BOTÃO */}
       <button
+      id="botao-forgot"
         type="submit"
         className="
           w-full
@@ -143,6 +145,4 @@ return(
    
    
    
-   </> 
-     
-);}
+   </>    );}

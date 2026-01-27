@@ -118,7 +118,9 @@ const router = useRouter();
               className=" cursor-pointer h-[46px] px-[45px] rounded-lg border border-white/60 text-white hover:bg-white/10 transition">
                 Entrar
               </button>
-              <button className=" cursor-pointer  h-[50px] px-[52px] rounded-lg bg-white text-purple-600 hover:bg-gray-100 transition">
+              <button
+              onClick={()=> router.push("/register")}
+              className=" cursor-pointer  h-[50px] px-[52px] rounded-lg bg-white text-purple-600 hover:bg-gray-100 transition">
                 Criar Conta
               </button>
             </div>

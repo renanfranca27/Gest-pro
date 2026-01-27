@@ -4,10 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+
+  
 
   return (
     <>
@@ -127,6 +130,7 @@ export default function LoginPage() {
         </label>
         <div className="relative">
           <input
+          id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -173,6 +177,7 @@ export default function LoginPage() {
         </label>
         <div className="relative">
           <input
+          id="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -215,6 +220,7 @@ export default function LoginPage() {
       <div className="flex items-center justify-between text-xs sm:text-sm">
         <label className="flex items-center gap-2 text-gray-600 font-light cursor-pointer">
           <input
+          id="checkbox"
             type="checkbox"
             className="w-4 h-4 rounded border-gray-300 text-indigo-600"
           />
@@ -229,9 +235,10 @@ export default function LoginPage() {
       </div>
 
       {/* BOTÃO */}
-      <button
-        type="submit"
-        className="
+      <button 
+      id="botao"
+        type=""
+        className={`
           w-full
           h-9 sm:h-10
           bg-indigo-600
@@ -242,7 +249,8 @@ export default function LoginPage() {
           hover:bg-indigo-500
           transition
           mt-2
-        "
+          
+        `}
       >
         Entrar no Sistema
       </button>
@@ -263,4 +271,5 @@ export default function LoginPage() {
       </main>
     </>
   );
+  
 }
